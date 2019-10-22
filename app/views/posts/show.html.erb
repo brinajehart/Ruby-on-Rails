@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Ime:</strong>
+  <%= @post.ime %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @post.opis %>
+</p>
+
+<p>
+  <strong>Stevilka:</strong>
+  <%= @post.stevilka %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
