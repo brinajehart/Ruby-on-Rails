@@ -14,6 +14,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= post.user.name %></td>
         <td><%= post.ime %></td>
         <td><%= post.opis %></td>
         <td><%= post.stevilka %></td>
