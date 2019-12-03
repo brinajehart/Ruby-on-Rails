@@ -2,30 +2,55 @@
 <h1>Posts</h1>
 
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.user.name %></td>
-      <td><%= post.ime %></td>
-      <td><%= post.opis %></td>
-      <td><%= post.stevilka %></td>
-      <td><%= link_to 'Show', post %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+  # <% @posts.each do |post| %>
+  #   <tr>
+  #     <td><%= post.user.name %></td>
+  #     <td><%= post.ime %></td>
+  #     <td><%= post.opis %></td>
+  #     <td><%= post.stevilka %></td>
+  #     <td><%= link_to 'Show', post %></td>
+  #     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  #     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  #   </tr>
+  # <% end %>
 
-<br>
+  
 
-<div class="ui card" style="width: 33%">
-  <a class="image" href="#">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80">
-  </a>
+
+
+  
+
+<% @posts.each do |post| %>
+
+<div class="ui card">
   <div class="content">
-    <a class="header" href="#">Steve Jobes</a>
-    <div class="meta">
-      <a>Last Seen 2 days ago</a>
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
+  </div>
+  <div class="image">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80">
+  </div>
+  <div class="content">
+  <div class="description">
+      <%= post.ime %>
+      <%= post.opis %>
+      </div>
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
+  </div>
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
     </div>
   </div>
 </div>
+<% end %>
+
+
 
 <%= link_to 'New Post', new_post_path %>
