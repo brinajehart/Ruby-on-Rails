@@ -1,31 +1,31 @@
 
 <h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Ime</th>
-      <th>Opis</th>
-      <th>Stevilka</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.user.name %></td>
-        <td><%= post.ime %></td>
-        <td><%= post.opis %></td>
-        <td><%= post.stevilka %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.user.name %></td>
+      <td><%= post.ime %></td>
+      <td><%= post.opis %></td>
+      <td><%= post.stevilka %></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 
 <br>
+
+<div class="ui card" style="width: 33%">
+  <a class="image" href="#">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80">
+  </a>
+  <div class="content">
+    <a class="header" href="#">Steve Jobes</a>
+    <div class="meta">
+      <a>Last Seen 2 days ago</a>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'New Post', new_post_path %>
