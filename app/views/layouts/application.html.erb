@@ -19,13 +19,17 @@
   a:hover {
     background: none !important;
   }
+  .ui.card:hover{
+    opacity: 0.8;
+    transition: all 0.2s;
+  }
   </style>
   <body>
 
     
 
  
-
+  <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>
