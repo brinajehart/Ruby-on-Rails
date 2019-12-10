@@ -13,7 +13,16 @@
   </head>
   <style>
   body {
-    background: #dedede;
+    /* background: #dedede; */
+    background-image: url(https://www.desktopbackground.org/p/2010/06/19/35254_grey-smoke-wallpapers-photo_2560x1440_h.jpg);
+    
+    /* Potentional background images:
+    https://www.desktopbackground.org/p/2010/06/19/35254_grey-smoke-wallpapers-photo_2560x1440_h.jpg
+    http://papers.co/wallpaper/papers.co-ae85-gray-smoke-art-wonderful-29-wallpaper.jpg
+    http://papers.co/wallpaper/papers.co-am73-smoke-white-bw-abstract-fog-art-illust-29-wallpaper.jpg
+    */
+    background-size: cover;
+    background-attachment: fixed;
     padding: 10px;
   }
   a:hover {
@@ -26,9 +35,6 @@
   </style>
   <body>
 
-    
-
- 
   <%= render 'layouts/header' %>
     <%= yield %>
   </body>

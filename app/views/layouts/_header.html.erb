@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div class="ui secondary  menu">
 <%= link_to('Home',root_path, class:"item active")%>
-<%= link_to('My profile', edit_user_registration_path, class:"item") %>
+<a class="item" href="/profile">Profile</a>
 <%= link_to 'Post a picture', new_post_path, class:"item" %>
 <div class="right menu">
   <div class="item">
@@ -18,7 +18,7 @@
 
 <div class="ui secondary  menu">
   <%= link_to('Home',root_path, class:"item active")%>
-  <%= link_to('My profile', edit_user_registration_path, class:"item") %>
+  <a class="item" href="/profile">Profile</a>
   <%= link_to 'Post a picture', new_post_path, class:"item" %>
   <div class="right menu">
     <div class="item">
@@ -33,3 +33,6 @@
 </div>
 
 <% end %>
+
+
+<!-- rails generate controller Profile -->
