@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2 class="center-alignment">Sign in</h2>
 
 <p id="notice" class="notice"><%= notice %></p>
 <p id="alert" class="alert"><%= alert %></p>
@@ -27,10 +27,17 @@
             </div>
           </div>
           <%= f.submit "Sign in", class:"ui blue submit button actions full-width" %>  
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class:"center-alignment" %>
           <style>
+
           .full-width { width: 100% !important }
+
+          .center-alignment{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+          }
           </style>
-          <%= render "devise/shared/links" %>
         </div>      
       </div>
       <div class="middle aligned column">
