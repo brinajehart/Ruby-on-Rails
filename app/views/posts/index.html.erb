@@ -1,8 +1,6 @@
 
 <p id="notice" class="notice"><%= notice %></p>
-<p id="alert" class="alert"><%= alert %></p>
-
-<h1>Posts</h1>
+<p id="alert" class="alert" style="color: red !important;"><%= alert %></p>
 
 <!---
   # <% @posts.each do |post| %>
@@ -21,13 +19,13 @@
 
 <% @posts.each do |post| %>
 
-<div style="float:left; width:32%; margin:10px;" class="ui card">
+<div style="float:left; width:32%; margin:10px; background-color: rgba(190, 190, 190, 0.8);" class="ui card">
   <div class="content">
     <div class="right floated meta">14h</div>
     <img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
   </div>
   <div class="image">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&w=1000&q=80">
+    <img src="https://images.wallpaperscraft.com/image/forest_snow_trees_149485_1920x1080.jpg">
   </div>
   <div class="content">
   <div class="description">

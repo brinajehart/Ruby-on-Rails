@@ -1,10 +1,19 @@
-<h2 class="center-alignment">Sign up</h2>
+<div class="align_content">
+</div>
+<h2 class="center-alignment" style="color:white;">Sign up</h2>
 
 <p id="notice" class="notice"><%= notice %></p>
-<p id="alert" class="alert"><%= alert %></p>
 <style>
 .new_user {
-  background-color: #eeeeee99;
+  background-color: #eeeeee88;
+}
+
+.align_content{
+  margin-top: 220px;
+}
+
+label{
+  color: black !important;
 }
 </style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -25,7 +34,7 @@
             <label>Email</label>
             <div class="ui left icon input">
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-              <i class="user icon"></i>
+              <i class="at icon"></i>
             </div>
           </div>
           <div class="field">
@@ -33,11 +42,10 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <div class="ui left icon input">
-            <i class="lock icon"></i>
             <%= f.password_field :password, autocomplete: "new-password" %>
-
-            <% end %><br    
             <i class="lock icon"></i>
+            <% end %><br>    
+            
             </div>
           </div>
           <div class="field">
@@ -49,6 +57,7 @@
           </div>
           <%= f.submit "Sign up", class:"ui blue submit button actions full-width" %>  
           <%= link_to "Already have an account?", new_session_path(resource_name), class:"center-alignment" %>
+          <p id="alert" class="alert center-alignment" style="color: #2185d0 !important; font-weight: bold;"><%= alert %></p>
           <style>
 
           .full-width { width: 100% !important }
@@ -62,9 +71,9 @@
         </div>      
       </div>
       <div class="middle aligned column">
-        <div onclick="window.location = '/users/sign_up'" class="ui big button">
+        <div onclick="window.location = '/users/sign_in'" class="ui big button">
           <i class="signup icon"></i>
-          <span style="color: #2185d0" class="ui item">Sign in</span>
+          <span style="color: #2185d0 !important;" class="ui item">Sign in</span>
         </div>
       </div>
     </div>

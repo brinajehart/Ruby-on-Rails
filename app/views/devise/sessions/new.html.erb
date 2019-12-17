@@ -1,12 +1,23 @@
-<h2 class="center-alignment">Sign in</h2>
+<div class="align_content">
+</div>
+<h2 class="center-alignment" style="color:white;">Sign in</h2>
 
 <p id="notice" class="notice"><%= notice %></p>
-<p id="alert" class="alert"><%= alert %></p>
+
 <style>
 .new_user {
   background-color: #eeeeee99;
 }
+.align_content{
+  margin-top: 220px;
+}
+
+label{
+  color: black !important;
+}
+
 </style>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div style="background: transparent;" class="ui placeholder segment">
     <div class="ui two column very relaxed stackable grid">
@@ -28,6 +39,7 @@
           </div>
           <%= f.submit "Sign in", class:"ui blue submit button actions full-width" %>  
           <%= link_to "Forgot your password?", new_password_path(resource_name), class:"center-alignment" %>
+          <p id="alert" class="alert center-alignment" style="color: #2185d0 !important; font-weight: bold;"><%= alert %></p>
           <style>
 
           .full-width { width: 100% !important }
@@ -43,7 +55,7 @@
       <div class="middle aligned column">
         <div onclick="window.location = '/users/sign_up'" class="ui big button">
           <i class="signup icon"></i>
-          <span style="color: #2185d0" class="ui item">Sign Up</span>
+          <span style="color: #2185d0 !important;" class="ui item">Sign Up</span>
         </div>
       </div>
     </div>
