@@ -15,6 +15,8 @@
 label{
   color: black !important;
 }
+
+
 </style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -71,10 +73,20 @@ label{
         </div>      
       </div>
       <div class="middle aligned column">
-        <div onclick="window.location = '/users/sign_in'" class="ui big button">
+        <div class="ui big button">
           <i class="signup icon"></i>
           <span style="color: #2185d0 !important;" class="ui item">Sign in</span>
         </div>
+        <br>
+        <button class="ui facebook button" style="width: 250px; height: 45px">
+          <i aria-hidden="true" class="facebook icon"></i>
+          Facebook
+        </button>
+        <br>
+        <button class="ui google plus button" style="width: 250px; height: 45px">
+          <i aria-hidden="true" class="google icon"></i>
+          Sign up with Google
+        </button>
       </div>
     </div>
     <div class="ui vertical divider">

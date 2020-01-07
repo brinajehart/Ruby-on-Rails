@@ -11,18 +11,24 @@
     </div>
   <% end %>
 
-
+<div class="ui form">
   <div class="field">
-    <%= form.label :opis %>
-    <%= form.text_field :opis %>
+    <div class="two fields">
+      <div class="field input">
+      <%= form.label :description %>
+      <%= form.text_field :opis %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :stevilka %>
-    <%= form.number_field :stevilka %>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :number %>
+      <%= form.number_field :stevilka %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", :class =>"ui secondary button" %>
   </div>
+</div>
 <% end %>
