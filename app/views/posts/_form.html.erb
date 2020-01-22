@@ -11,18 +11,21 @@
     </div>
   <% end %>
 
+<%= form.label "Photo" %>
+<%= form.file_field :avatar %><br>
+
 <div class="ui form">
   <div class="field">
     <div class="two fields">
       <div class="field input">
-      <%= form.label :description %>
+      <%= form.label :description, :style =>"color:white" %>
       <%= form.text_field :opis %>
       </div>
     </div>
   </div>
   <div class="two fields">
-    <div class="field">
-      <%= form.label :number %>
+    <div class="field" >
+      <%=form.label :number, :style =>"color:white" %>
       <%= form.number_field :stevilka %>
     </div>
   </div>
