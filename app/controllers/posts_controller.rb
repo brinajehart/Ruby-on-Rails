@@ -6,11 +6,14 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    puts @posts
+
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    commontator_thread_show(@post)
   end
 
   # GET /posts/new
@@ -71,6 +74,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:ime, :opis, :stevilka)
+      params.require(:post).permit(:ime, :opis, :stevilka, :attachment)
     end
 end

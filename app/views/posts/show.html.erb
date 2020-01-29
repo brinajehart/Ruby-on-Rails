@@ -1,3 +1,5 @@
+
+
 <p>
   <strong>Ime:</strong>
   <%= @post.user.name %>
@@ -15,6 +17,9 @@
 <p>
   <strong>Stevilka:</strong>
   <%= @post.stevilka %>
+</p>
+<p>
+<%= commontator_thread(@post) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

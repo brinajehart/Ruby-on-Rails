@@ -58,3 +58,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Semantic UI
 
 gem 'semantic-ui-rails'
+
+# Carrierwave
+
+gem 'carrierwave', '~> 2.0'
+
+# Comments
+
+gem 'commontator'
+gem 'jquery-rails'
+gem 'sassc-rails'

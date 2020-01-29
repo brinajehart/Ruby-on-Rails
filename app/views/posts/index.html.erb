@@ -25,13 +25,15 @@
     <img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
   </div>
   <div class="image">
-    <img src="https://images.wallpaperscraft.com/image/forest_snow_trees_149485_1920x1080.jpg">
+    <img 
+      src="<%= post.attachment %>" 
+      style="height: 300px !important;"
+    />
   </div>
   <div class="content">
   <div class="description">
       <%= post.ime %>
       <%= post.opis %>
-
       </div>
     <span class="right floated">
       <i class="heart outline like icon"></i>

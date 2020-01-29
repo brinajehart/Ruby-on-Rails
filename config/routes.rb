@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#index'
   get '/friends', to: 'friends#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount Commontator::Engine => '/commontator'
 end
