@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @show = true
   end
 
   # POST /posts

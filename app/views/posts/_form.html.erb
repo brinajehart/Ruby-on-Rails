@@ -1,3 +1,4 @@
+<div class="content1" style="width: 60%; margin: auto; padding:10px; height: 28%!important; background-color: #eeeeeeaa; font-size: 1.2em !important; font-weight:bold!important">
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +12,27 @@
     </div>
   <% end %>
 
-<%= form.label "Photo" %>
-<%= form.file_field :attachment, :required => true %><br>
+<%= form.label "Photo", :style => "margin:20px 0px 0px 10px;"%>
+<%= form.file_field :attachment, :required => true, :style => "margin:10px;" %>
 
 <div class="ui form">
   <div class="field">
     <div class="two fields">
-      <div class="field input">
-      <%= form.label :description, :style =>"color:white" %>
-      <%= form.text_field :opis %>
+      <div class="field input" style="width: calc(100% - 20px) !important;">
+      <%= form.label :description, :style =>"font-size: 1.2em !important; margin:0px 0px 10px 10px;"%>
+      <%= form.text_field :opis, :style => "margin:0px 10px 10px 10px;" %>
       </div>
     </div>
   </div>
-  <div class="two fields">
-    <div class="field" >
-      <%=form.label :number, :style =>"color:white" %>
-      <%= form.number_field :stevilka %>
-    </div>
-  </div>
-
+  <div class="buttonss" style="display: flex; justify-content: center; align-items:center;">
   <div class="actions">
-    <%= form.submit "Submit", :class =>"ui secondary button" %>
+    <%= form.submit "Submit", :class =>"ui secondary button", :style =>"float:left; margin-right: 15px; font-weight:normal!important" %>
+    <%= link_to 'Back', posts_path, :class =>"ui secondary button", :style =>"float:left; margin-right: 15px; font-weight:normal!important" %>
+    <% if @show == true %>
+      <%= link_to 'Show', @post, :class =>"ui secondary button", :style =>"float:left; font-weight:normal!important" %>
+    <% end %>
   </div>
+</div>
+</div>
 </div>
 <% end %>
