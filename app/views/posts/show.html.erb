@@ -8,6 +8,12 @@
   padding:10px;
 }
 
+.diffbuttons{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
 </style>
 
 <div class="showinfo">
@@ -27,14 +33,14 @@ style="height: 600px !important; width:auto !important;"
 </p>
 
 <p>
-  <strong>Stevilka:</strong>
-  <%= @post.stevilka %>
-</p>
-<p>
 <%= commontator_thread(@post) %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button" %>
-<%= link_to 'Back', posts_path, class:"ui secondary button" %>
+<div class="diffbuttons">
+
+<%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button", style:"margin-right:10px; width: 10%;" %>
+<%= link_to 'Back', posts_path, class:"ui secondary button", style:"width: 10%;" %>
+
+</div>
 </div>
 
