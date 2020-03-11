@@ -1,16 +1,28 @@
+<style>
 
+.showinfo{
+  font-size:1.2em;
+  background-color: #eeeeeeaa;
+  width: 70%;
+  margin: auto;
+  padding:10px;
+}
+
+</style>
+
+<div class="showinfo">
+<div>
+<img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1" 
+style="width:50px; height:50px;"> 
+<%= @post.user.name%>
+</div>
+
+<img 
+src="<%= @post.attachment %>" 
+style="height: 600px !important; width:auto !important;"
+/>
 
 <p>
-  <strong>Ime:</strong>
-  <%= @post.user.name %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @post.ime %>
-</p>
-
-<p>
-  <strong>Opis:</strong>
   <%= @post.opis %>
 </p>
 
@@ -22,5 +34,7 @@
 <%= commontator_thread(@post) %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button" %>
+<%= link_to 'Back', posts_path, class:"ui secondary button" %>
+</div>
+
