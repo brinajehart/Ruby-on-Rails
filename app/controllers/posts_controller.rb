@@ -5,8 +5,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-    puts @posts
+    @posts = Post.where(nil)
+    if request.GET['search']
+      @posts=@posts.where('LOWER(opis) LIKE ?', "%#{request.GET['search'].downcase}%")
+    end
 
   end
 
