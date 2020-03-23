@@ -15,41 +15,32 @@
   #   </tr>
   # <% end %>
 -->
-
-
+<div style="margin-top: 40px;">
 <% @posts.each do |post| %>
 
-<div style="float:left; width:32%; margin:10px; background-color: rgba(190, 190, 190, 0.8);" class="ui card">
+<div style="width:50%!important; margin:auto; margin-top:15px; background-color: white" class="ui card">
   <div class="content">
-    <div class="right floated meta">14h</div>
-    <img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
+    <div class="right floated meta" style="color:black!important; font-size: 1em!important">14h</div>
+    <img class="ui avatar image" style="color:black!important; font-size:1.1em!important"
+    src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
   </div>
   <div class="image">
-    <img 
+    <img
+      onclick="window.location='/posts/<%= post.id %>'"
       src="<%= post.attachment %>" 
-      style="height: 300px !important;"
+      style="height: 550px !important;"
     />
   </div>
-  <div class="content">
-  <div class="description">
-      <%= post.ime %>
-      <%= post.opis %>
-      </div>
+  <div class="content" style="color:black!important; font-size:1.1em!important">
     <span class="right floated">
       <i class="heart outline like icon"></i>
       17 likes
     </span>
-    <i class="comment icon"></i>
-    3 comments
-  </div>
-  <div class="extra content">
-    <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment...">
-    </div>
+    <%= post.opis %>
   </div>
 </div>
 <% end %>
+</div>
 
 
 

@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     commontator_thread_show(@post)
+    @USER= current_user
   end
 
   # GET /posts/new
