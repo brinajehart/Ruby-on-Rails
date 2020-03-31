@@ -67,3 +67,8 @@ gem 'carrierwave', '~> 2.0'
 gem 'commontator'
 gem 'jquery-rails'
 gem 'sassc-rails'
+
+# API
+
+gem 'jwt' #json token
+gem 'simple_command' #authenticates user

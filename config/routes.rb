@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   
   root to: 'posts#index'
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :posts, only: [:index, :show]
+      post 'authenticate', to: 'authentication#authenticate'
+    end
+  end
+
   get '/profile', to: 'profile#index'
   get '/friends', to: 'friends#index'
   get '/profile/:id', to: 'profile#other'
