@@ -1,36 +1,43 @@
-<h1> Srebus </h1>
+<div class="user_profile">
+
+  <img src="https://www.corneliustoday.com/wp-content/uploads/2019/08/camera-black-and-white-tumblr.jpg" alt="profile pic" 
+  style="height: 20em; width: 20em; border-radius: 500rem;">
+
+</div>
+<div class="user_details">
+<p>Ime in Priimek</p>
+</div>
+<div class="user_details2">
+<p>username</p>
+</div>
+
+
+<div class="user_info">
+  <div class="uinfo">
+    <p>1000<br>Posts</p>
+  </div>
+  <div class="uinfo">
+    <p>1000<br>Followers</p>
+  </div>
+  <div class="uinfo">
+    <p>1000<br>Following</p>
+  </div>
+</div>
+
+<div style="clear:both;"></div>
+
 
 <% @posts.each do |post| %>
 
-<div style="float:left; width:32%; margin:10px; background-color: white;" class="ui card">
-  <div class="content">
-    <div class="right floated meta">14h</div>
-    <img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
-  </div>
+<div style="float:left; width:32.2%; margin:10px; background-color: white;" class="ui card">
   <div class="image">
     <img
       onclick="window.location='/posts/<%= post.id %>'"
       src="<%= post.attachment %>" 
-      style="height: 300px !important;"
+      style="height: 350px !important;"
     />
   </div>
-  <div class="content">
-  <div class="description">
-      <%= post.ime %>
-      <%= post.opis %>
-      </div>
     <span class="right floated">
-      <i class="heart outline like icon"></i>
-      17 likes
-    </span>
-    <i class="comment icon"></i>
-    3 comments
-  </div>
-  <div class="extra content">
-    <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment...">
-    </div>
   </div>
 </div>
 <% end %>

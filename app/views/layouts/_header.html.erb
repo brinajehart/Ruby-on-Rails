@@ -1,5 +1,4 @@
 
-
 <% if user_signed_in? %>
 <div class="ui secondary menu" style="border-bottom: solid gray 1px; padding-bottom: 5px !important; background-color: #808080 !important;">
 <%= link_to('Home',root_path, class:"item active")%>
@@ -36,19 +35,6 @@
     <div class="item">
       <div class="ui blue empty circular label"></div>
       <%= link_to 'Post a picture', new_post_path %>
-    </div>
-    <div class="divider"></div>
-    <div class="header">
-    <i class="images outline icon"></i>
-      Album
-    </div>
-    <div class="item">
-      <div class="ui orange empty circular label"></div>
-      Create
-    </div>
-    <div class="item">
-      <div class="ui yellow empty circular label"></div>
-      Your collection
     </div>
     <div class="divider"></div>
     <div class="header">
