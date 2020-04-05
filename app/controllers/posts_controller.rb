@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if request.GET['search']
       @posts=@posts.where('LOWER(opis) LIKE ?', "%#{request.GET['search'].downcase}%")
     end
-
+    @posts = @posts.order(created_at: :desc)
   end
 
   # GET /posts/1

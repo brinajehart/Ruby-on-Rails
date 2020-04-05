@@ -2,6 +2,7 @@ class ProfileController < ApplicationController
     def index
         @USER=current_user 
         @posts= Post.where(user: current_user)
+        @posts = @posts.order(created_at: :desc)
     end
     
     def other

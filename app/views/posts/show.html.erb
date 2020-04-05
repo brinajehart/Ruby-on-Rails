@@ -1,9 +1,9 @@
 <style>
 
 .showinfo{
-  font-size:1.2em;
+  font-size:1.1em;
   background-color: #eeeeeeaa;
-  width: 70%;
+  width: 57%;
   margin: auto;
   padding:10px;
 }
@@ -17,11 +17,6 @@
 </style>
 
 <div class="showinfo">
-<div>
-<img class="ui avatar image" src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1" 
-style="width:50px; height:50px;"> 
-<%= @post.user.name%>
-</div>
 
 <div style="display:flex; align-items: center; justify-content:center;">
 <img 
@@ -30,25 +25,25 @@ style="height: 600px !important; width:auto !important;"
 />
 </div>
 
-<p style="font-size:1.1em!important">
+
+<p style="font-size:1.3em!important; margin: 5px;"> <%= @post.user.name%> </p>
+
+<p style="font-size:1.1em!important; margin: 5px; float:left;">
   <%= @post.opis %>
 </p>
 
-<p>
+<div class="diffbuttons">
+  <%= link_to 'Back', posts_path, class:"ui secondary button", style:"width: 9%;" %>
+  <% if @post.user == @USER %>
+      <%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button", style:"margin-left:2px; width: 9%;" %>
+      <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class:"ui red button", style:"margin-left:2px; width: 9%;" %>
+  <% end %>
+</div>
+
+
+<p style="margin: 5px;">
 <%= commontator_thread(@post) %>
 </p>
 
-
-<div class="diffbuttons">
-
-<%= link_to 'Back', posts_path, class:"ui secondary button", style:"width: 9%;" %>
-
-<% if @post.user == @USER %>
-    <%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button", style:"margin-left:2px; width: 9%;" %>
-    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class:"ui red button", style:"margin-left:2px; width: 9%;" %>
-<% end %>
-
-
-</div>
 </div>
 
