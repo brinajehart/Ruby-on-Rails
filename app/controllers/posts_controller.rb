@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
-
+  
   # GET /posts
   # GET /posts.json
   def index
@@ -10,6 +10,18 @@ class PostsController < ApplicationController
       @posts=@posts.where('LOWER(opis) LIKE ?', "%#{request.GET['search'].downcase}%")
     end
     @posts = @posts.order(created_at: :desc)
+  end
+
+  def like 
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+  
+  def dislike
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+    redirect_back(fallback_location: root_path)
   end
 
   # GET /posts/1

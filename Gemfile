@@ -72,3 +72,7 @@ gem 'sassc-rails'
 
 gem 'jwt' #json token
 gem 'simple_command' #authenticates user
+
+# Likes
+
+gem 'acts_as_votable'

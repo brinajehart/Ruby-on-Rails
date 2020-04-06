@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :avatar
   acts_as_commontator
+  acts_as_voter
 end

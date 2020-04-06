@@ -20,7 +20,7 @@
 
 <div style="width:50%!important; margin:auto; margin-top:15px; background-color: white" class="ui card">
   <div class="content">
-    <div class="right floated meta" style="color:black!important; font-size: 1em!important">14h</div>
+    <div class="right floated meta" style="color:black!important; font-size: 1em!important" ><%= time_ago_in_words(post.created_at) %> ago</div>
     <img class="ui avatar image" style="color:black!important; font-size:1.1em!important"
     src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
   </div>
@@ -28,13 +28,21 @@
     <img
       onclick="window.location='/posts/<%= post.id %>'"
       src="<%= post.attachment %>" 
-      style="height: 550px !important;"
+      style="object-fit: cover; height: 550px !important;"
     />
   </div>
   <div class="content" style="color:black!important; font-size:1.1em!important">
     <span class="right floated">
-      <i class="heart outline like icon"></i>
-      17 likes
+        <% if current_user.voted_up_for? post %>
+          <%= link_to dislike_post_path(post.id), method: :put, class: "links" do %>
+            <i class="red heart like icon"></i>
+          <% end %>
+        <% else %>
+          <%= link_to like_post_path(post.id), method: :put, class: "links" do %>
+            <i class="heart outline like icon"></i>
+          <% end %>
+        <% end %>
+        <%= post.get_upvotes.size.to_s %>
     </span>
     <%= post.opis %>
   </div>

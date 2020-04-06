@@ -1,7 +1,7 @@
 <div class="user_profile">
 
   <img src="https://www.corneliustoday.com/wp-content/uploads/2019/08/camera-black-and-white-tumblr.jpg" alt="profile pic" 
-  style="height: 20em; width: 20em; border-radius: 500rem;">
+  style="object-fit: cover; height: 20em; width: 20em; border-radius: 500rem;">
 
 </div>
 <div class="user_details">
@@ -34,7 +34,7 @@
     <img
       onclick="window.location='/posts/<%= post.id %>'"
       src="<%= post.attachment %>" 
-      style="height: 350px !important;"
+      style="object-fit: cover; height: 350px !important;"
     />
   </div>
     <span class="right floated">
