@@ -76,3 +76,7 @@ gem 'simple_command' #authenticates user
 # Likes
 
 gem 'acts_as_votable'
+
+# Followers
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'

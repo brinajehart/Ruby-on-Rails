@@ -10,6 +10,14 @@ Rails.application.routes.draw do
       put "dislike",to: 'posts#dislike'
     end
   end
+  
+  resources :follow_system do 
+    member do
+      put "follow", to: 'follow_system#follow'
+      put "unfollow",to: 'follow_system#unfollow'
+    end
+  end
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :posts, only: [:index, :show]

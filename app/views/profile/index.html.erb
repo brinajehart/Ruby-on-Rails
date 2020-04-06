@@ -11,16 +11,33 @@
 <p><%= @USER.name%> </p>
 </div>
 
+<div>
+
+<% if @IsThisMe == false and @USER != current_user %>
+  <% if current_user.following?(@USER) %>
+    <%= link_to unfollow_follow_system_path(@USER.id), method: :put, class: "links" do %>
+      <i class="minus icon"></i>
+    <% end %>
+    
+  <% else %>
+
+    <%= link_to follow_follow_system_path(@USER.id), method: :put, class: "links" do %>
+      <i class="plus icon"></i>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
 
 <div class="user_info">
   <div class="uinfo">
-    <p>1000<br>Posts</p>
+    <p><%= @post_count %><br>Posts</p>
   </div>
   <div class="uinfo">
-    <p>1000<br>Followers</p>
+    <p><%= @follower_count %><br>Followers</p>
   </div>
   <div class="uinfo">
-    <p>1000<br>Following</p>
+    <p><%= @following_count %><br>Following</p>
   </div>
 </div>
 

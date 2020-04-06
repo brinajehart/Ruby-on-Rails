@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   acts_as_commontator
   acts_as_voter
+  acts_as_follower
+  acts_as_followable
 end
