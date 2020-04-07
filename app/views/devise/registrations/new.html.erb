@@ -28,8 +28,15 @@ label{
     <div class="ui two column very relaxed stackable grid">
       <div class="column">
         <div class="ui form">
+        <div class="field">
+            <label>Full Name</label>
+            <div class="ui left icon input">
+            <%= f.text_field :fullname %>
+              <i class="user icon"></i>
+            </div>
+          </div>
           <div class="field">
-            <label>Name</label>
+            <label>Username</label>
             <div class="ui left icon input">
             <%= f.text_field :name %>
               <i class="user icon"></i>

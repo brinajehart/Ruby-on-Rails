@@ -33,13 +33,15 @@
   </div>
   <div class="content" style="color:black!important; font-size:1.1em!important">
     <span class="right floated">
-        <% if current_user.voted_up_for? post %>
-          <%= link_to dislike_post_path(post.id), method: :put, class: "links" do %>
-            <i class="red heart like icon"></i>
-          <% end %>
-        <% else %>
-          <%= link_to like_post_path(post.id), method: :put, class: "links" do %>
-            <i class="heart outline like icon"></i>
+        <% if current_user %>
+          <% if current_user.voted_up_for? post %>
+            <%= link_to dislike_post_path(post.id), method: :put, class: "links" do %>
+              <i class="red heart like icon"></i>
+            <% end %>
+          <% else %>
+            <%= link_to like_post_path(post.id), method: :put, class: "links" do %>
+              <i class="heart outline like icon"></i>
+            <% end %>
           <% end %>
         <% end %>
         <%= post.get_upvotes.size.to_s %>

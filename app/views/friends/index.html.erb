@@ -1,18 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h2 class="ui center aligned icon header" style="color:white !important">
+<h2 class="ui center aligned icon header" style="color:black !important">
   <i class="circular users icon"></i>
-  Friends
+  People you might know
 </h2>
 
 <table>
-  <thead>
-    <tr>
-      <th>Users</th>
-      <th>Users</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
     <% @friends.each do |friend| %>
@@ -28,8 +22,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Friend', new_friend_path %>
 
 <br>
 
