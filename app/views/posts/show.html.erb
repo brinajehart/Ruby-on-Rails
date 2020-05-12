@@ -3,7 +3,7 @@
 .showinfo{
   font-size:1.1em;
   background-color: #eeeeeeaa;
-  width: 57%;
+  width: 60%;
   margin: auto;
   padding:10px;
 }
@@ -21,22 +21,22 @@
 <div style="display:flex; align-items: center; justify-content:center;">
 <img 
 src="<%= @post.attachment %>" 
-style="height: 600px !important; width:auto !important;"
+style="height: 550px !important; width:auto !important;"
 />
 </div>
 
 
 <p style="font-size:1.3em!important; margin: 5px;"> <%= @post.user.name%> </p>
 
-<p style="font-size:1.1em!important; margin: 5px; float:left;">
+<p class="-desc" style="font-size:1.1em!important; margin: 5px; float:left;">
   <%= @post.opis %>
 </p>
 
 <div class="diffbuttons">
-  <%= link_to 'Back', posts_path, class:"ui secondary button", style:"width: 9%;" %>
+  <%= link_to 'Back', posts_path, class:"ui secondary button", style:"width: 80px;" %>
   <% if @post.user == @USER %>
-      <%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button", style:"margin-left:2px; width: 9%;" %>
-      <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class:"ui red button", style:"margin-left:2px; width: 9%;" %>
+      <%= link_to 'Edit', edit_post_path(@post), class:"ui secondary button", style:"margin-left:2px; width: 80px;" %>
+      <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class:"ui red button", style:"margin-left:2px; width: 85px;" %>
   <% end %>
 </div>
 
@@ -47,3 +47,12 @@ style="height: 600px !important; width:auto !important;"
 
 </div>
 
+<script>
+  $(document).ready(() => {
+    $('.-desc').each((el, item) => {
+      let description = item.innerHTML.replace(/#(\S*)/g,'<a href="/?search=$1">#$1</a>');
+      console.log(description);
+      $('.-desc')[el].innerHTML = description;
+    });
+  })
+</script>

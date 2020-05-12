@@ -46,13 +46,19 @@
         <% end %>
         <%= post.get_upvotes.size.to_s %>
     </span>
+    <span class="-desc">
     <%= post.opis %>
+    </span>
   </div>
 </div>
 <% end %>
-</div>
 
-
-
-
-
+<script>
+  $(document).ready(() => {
+    $('.-desc').each((el, item) => {
+      let description = item.innerHTML.replace(/#(\S*)/g,'<a href="/?search=$1">#$1</a>');
+      console.log(description);
+      $('.-desc')[el].innerHTML = description;
+    });
+  })
+</script>

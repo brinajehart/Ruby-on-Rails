@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
+  mount_uploader :avatar, ImgUploadUploader
   has_many :posts
-  has_one_attached :avatar
   acts_as_commontator
   acts_as_voter
   acts_as_follower
