@@ -2,7 +2,7 @@
 
 <h2 class="ui center aligned icon header" style="color:black !important">
   <i class="circular users icon"></i>
-  People you might know
+  <%= @title %>
 </h2>
 
 <br>
@@ -12,10 +12,11 @@
 <div class="ui link cards">
 <div class="card">
   <div class="image">
-    <img src="https://get.pxhere.com/photo/work-man-person-suit-black-and-white-people-white-male-guy-standing-portrait-young-corporate-tie-office-fashion-professional-business-clothing-black-monochrome-wedding-dress-bride-groom-modern-smile-shirt-tuxedo-face-men-one-happy-elegant-boss-handsome-gown-adult-businessman-executive-success-confident-successful-manager-dapper-formal-wear-monochrome-photography-bridal-clothing-868417.jpg" alt="Profile Picture">
+  <img style="height: 250px; object-fit: cover;" src="<%= prkl.avatar %>"
+  onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';">
   </div>
   <div class="content">
-    <div class="header"> <%= prkl.name %> </div>
+    <div class="header"> <span class="userlink" onclick="window.location= ('/profile/<%= prkl.id %>')"><%= prkl.name %> </div>
   </div>
 </div>
 </div>

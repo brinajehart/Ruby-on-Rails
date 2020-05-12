@@ -12,12 +12,14 @@ class FriendsController < ApplicationController
   def follower
     @ids = Follow.where(followable: current_user).select(:follower_id).map { |n| n["follower_id"] }
     @users = User.where(id: @ids) 
+    @title = "People you might know"
     render :template => "friends/index"
   end
 
   def following
     @ids = Follow.where(follower: current_user).select(:followable_id).map { |n| n["followable_id"] }
     @users = User.where(id: @ids) 
+    @title = "People you follow"
     render :template => "friends/index"
   end
 
