@@ -26,7 +26,7 @@ style="height: 550px !important; width:auto !important;"
 </div>
 
 
-<p style="font-size:1.3em!important; margin: 5px;"> <%= @post.user.name%> </p>
+<p class="userlink" style="font-size:1.3em!important; margin: 5px;" onclick="window.location= ('/profile/<%= @post.user.id %>')"> <%= @post.user.name%> </p>
 
 <p class="-desc" style="font-size:1.1em!important; margin: 5px; float:left;">
   <%= @post.opis %>

@@ -5,6 +5,20 @@ class FriendsController < ApplicationController
   # GET /friends.json
   def index
     @friends = Friend.all
+    @follower_count = Follow.where(followable: @USER).count
+    @following_count = Follow.where(follower: @USER).count
+  end
+
+  def follower
+    @ids = Follow.where(followable: current_user).select(:follower_id).map { |n| n["follower_id"] }
+    @users = User.where(id: @ids) 
+    render :template => "friends/index"
+  end
+
+  def following
+    @ids = Follow.where(follower: current_user).select(:followable_id).map { |n| n["followable_id"] }
+    @users = User.where(id: @ids) 
+    render :template => "friends/index"
   end
 
   # GET /friends/1

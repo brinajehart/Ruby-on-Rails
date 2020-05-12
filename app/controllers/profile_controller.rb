@@ -18,7 +18,4 @@ class ProfileController < ApplicationController
         @following_count = Follow.where(follower: @USER).count
         render :template => "profile/index"
     end
-
-    
-
 end

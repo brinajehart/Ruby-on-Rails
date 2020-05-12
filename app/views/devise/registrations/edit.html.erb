@@ -3,29 +3,16 @@
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
   <hr>
 
-  <form class="ui form">
-  <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name">
-  </div>
-  <div class="field">
-    <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name">
-  </div>
-  <button class="ui button" type="submit">Submit</button>
-</form>
-
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource, class:"ui form" %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "ui form", method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
@@ -34,7 +21,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
       <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <br />
@@ -43,25 +30,24 @@
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password %>
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Update" %>
-      <button class="positive ui button">Positive Button</button>
+      <%= f.submit "Update", class: "positive ui button" %>
     </div>
   <% end %>
 
   <h3 >Cancel my account</h3>
-  <hr>
+  <hr style="border-top:1px solid black">
 
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"ui red button" %></p>
+  <p style="font-size: 1.2em!important; font-weight: bold;">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"ui red button" %></p>
 
-  <%= link_to "Back", :back %>
+  <button onclick="history.go(-1)" class="ui secondary button">Back</button>
 </div>

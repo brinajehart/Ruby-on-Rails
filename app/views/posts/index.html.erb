@@ -22,7 +22,8 @@
   <div class="content">
     <div class="right floated meta" style="color:black!important; font-size: 1em!important" ><%= time_ago_in_words(post.created_at) %> ago</div>
     <img class="ui avatar image" style="color:black!important; font-size:1.1em!important"
-    src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> <%= post.user.name %>
+    src="https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1"> 
+    <span class="userlink" onclick="window.location= ('/profile/<%= post.user.id %>')"> <%= post.user.name %> </span>
   </div>
   <div class="image">
     <img
