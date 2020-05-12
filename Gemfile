@@ -80,3 +80,8 @@ gem 'acts_as_votable'
 # Followers
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+# Active Admin
+
+gem 'activeadmin'
+gem 'inherited_resources'
